@@ -29,12 +29,12 @@ def download(url, destination):
 
 def _apply(item_type, item):
 	print('Applying %s' % item)
-	local('rsync -rt --exclude=.svn %s/%s/* build/' % (item_type, item))	
+	local('rsync -rt --exclude=.svn %s/%s/* build/' % (item_type, item))
 
-def build():
+def build(config_file=None):
 	"""
 	Build forum service
-	
+
 	- Download vanilla forum
 	- Apply patches
 	- Apply addones
@@ -42,56 +42,58 @@ def build():
 	"""
 
 	print('Preparing build')
-		
+
 	local('rm -rf build')
 	local('mkdir build')
-	
+
 	print('Downloading vanilla forum %s' % VFORUM_VERSION)
-	
+
 	download(VFORUM_URL, VFORUM_TMP_FILE)
-	
+
 	local('unzip %s -d build/' % VFORUM_TMP_FILE)
-	
+
 	local('mv build/vanilla/* build/')
 	local('mv build/vanilla/.htaccess build/')
 	local('rm -rf build/vanilla/')
-	
+
 	print('Downloading plugins')
-	
+
 	download(PLUGIN_FILE_UPLOAD_URL, PLUGIN_FILE_UPLOAD_TMP_FILE)
 	local('unzip %s -d build/plugins/' % PLUGIN_FILE_UPLOAD_TMP_FILE)
-	
+
 	download(PLUGIN_WHOISONLINE_URL, PLUGIN_WHOISONLINE_TMP_FILE)
-	local('unzip %s -d build/plugins/' % PLUGIN_WHOISONLINE_TMP_FILE)	
+	local('unzip %s -d build/plugins/' % PLUGIN_WHOISONLINE_TMP_FILE)
 
 	download(PLUGIN_QUOTE_URL, PLUGIN_QUOTE_TMP_FILE)
 	local('unzip %s -d build/plugins/' % PLUGIN_QUOTE_TMP_FILE)
-	
+
 	print 'Applying addons'
-	
+
 	_apply('addons', 'selvbetjening-sso')
-	
+
 	print ('Setting permissions')
-	
-	local('chmod 777 build/uploads')
-	local('chmod 777 build/cache')
-	local('chmod 777 build/conf')
-	local('chmod 777 build/cache/Smarty/compile')
-	
-	print ('Copy config !TEMP!')
-	
-	local('cp config.php build/conf')
-	local('chmod 777 build/conf/config.php')
-	
-	# block pages 			OK
-	# remove dead links
-	# insert SSO
-	
+
+	local('chmod 770 build/uploads')
+	local('chmod 770 build/cache')
+	local('chmod 770 build/cache/Smarty/compile')
+
+	if config_file is not None:
+		print ('Copy config')
+
+		local('cp %s build/conf/config.php' % config_file)
+		local('chmod 777 build/conf/config.php')
+
 	# link to profiles
-	
+
 	# deployment
-	
+
 	# locale
 	# theme?
-	
-		
+
+
+# lav deployment
+# lav migration plan
+# profiles
+# better editor (optional)
+# locale
+# theme

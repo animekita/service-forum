@@ -6,7 +6,7 @@ $PluginInfo['SelvbetjeningSSO'] = array(
    'Author' => "Casper S. Jensen",
    'AuthorEmail' => 'the@sema.dk',
    'AuthorUrl' => 'http://www.sema.dk',
-   'RequiredApplications' => array('Vanilla' => '2.0.11'),
+   'RequiredApplications' => array('Vanilla' => '2.0.17'),
    'MobileFriendly' => TRUE,
    'RequiredTheme' => FALSE, 
    'RequiredPlugins' => FALSE,
@@ -32,27 +32,6 @@ class SelvbetjeningSSOPlugin extends Gdn_Plugin {
         if (!Gdn::Authenticator()->IsPrimary('selvbetjeningsso')) exit('ERROR: Selvbetjening Authenticator not loaded.');
         
         $Target = FALSE;
-        
-//        $RawTarget = Gdn::Request()->GetValue('HTTP_REFERER', FALSE);
-//        if ($RawTarget && $Components = parse_url($RawTarget)) {
-//
-//            $ThisHost = Gdn::Request()->GetValue('HTTP_HOST', FALSE);
-// 
-//            if (isset($Components['host']) && isset($Components['path']) &&
-//               $Components['host'] !== FALSE && $Components['host'] == $ThisHost) {
-//                  
-//               $Target = $Components['path'];
-//               
-//               if (isset($Components['query'])) {
-//
-//                   $Target .= '?' . $Components['query'];
-//               }
-//               
-//               if (isset($Components['fragment'])) {
-//                   $Target .= '#' . urlencode($Components['fragment']);
-//               }
-//            }  
-//        } 
         
         if ($Target === FALSE) {
             $Target = isset($_GET['Target']) ? $_GET['Target'] : FALSE;
