@@ -27,18 +27,12 @@ def download(url, destination):
 	else:
 		local('wget -O %s %s' % (destination, url), capture=False)
 
-def _apply(item_type, item):
-	print('Applying %s' % item)
-	local('rsync -rt --exclude=.svn %s/%s/* build/' % (item_type, item))
-
 def build(config_file=None):
 	"""
 	Build forum service
 
 	- Download vanilla forum
-	- Apply patches
 	- Apply addones
-	- Apply configuration templates
 	"""
 
 	print('Preparing build')
@@ -67,9 +61,9 @@ def build(config_file=None):
 	download(PLUGIN_QUOTE_URL, PLUGIN_QUOTE_TMP_FILE)
 	local('unzip %s -d build/plugins/' % PLUGIN_QUOTE_TMP_FILE)
 
-	print 'Applying addons'
+	print 'Applying selvbetjening-sso addon'
 
-	_apply('addons', 'selvbetjening-sso')
+	local('ln -s -f ../../addons/selvbetjening-sso/plugins/SelvbetjeningSSO build/plugins/SelvbetjeningSSO')
 
 	print ('Setting permissions')
 
@@ -82,14 +76,6 @@ def build(config_file=None):
 
 		local('cp %s build/conf/config.php' % config_file)
 		local('chmod 777 build/conf/config.php')
-
-	# link to profiles
-
-	# deployment
-
-	# locale
-	# theme?
-
 
 # lav deployment
 # lav migration plan
