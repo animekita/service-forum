@@ -31,9 +31,9 @@
 							   $ProfileSlug = $Session->UserID.'/'.urlencode($Session->User->Name);
 							}
 
-							$this->Menu->AddLink('User', $Name, '/profile/'.$ProfileSlug, array('Garden.SignIn.Allow'), array('class' => 'NonTab UserProfile'));
-
 							$this->Menu->AddLink('SignOut', T('Sign Out'), Gdn::Authenticator()->SignOutUrl(), FALSE, array('class' => 'NonTab SignOut'));
+
+							$this->Menu->AddLink('User', $Name, '/profile/'.$ProfileSlug, array('Garden.SignIn.Allow'), array('class' => 'NonTab UserProfile'));
 
 						} else {
 							$Attribs = array();
