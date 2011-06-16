@@ -18,11 +18,11 @@ class KitaMiscPlugin extends Gdn_Plugin {
 
     }
 
-    public function DiscussionsController_AfterAllDiscussionsTab_Handler(&$Sender) {
+    public function DiscussionsController_AfterDiscussionTabs_Handler(&$Sender) {
         echo Anchor("Mark All Viewed", "/discussions/markallviewed");
     }
 
-    public function CategoriesController_AfterAllDiscussionsTab_Handler(&$Sender) {
+    public function CategoriesController_AfterDiscussionTabs_Handler(&$Sender) {
         echo Anchor("Mark All Viewed", "/discussions/markallviewed");
     }
 
