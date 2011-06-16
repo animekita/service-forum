@@ -1,0 +1,11 @@
+--- class.allviewed.plugin.php
++++ class.allviewed.plugin.php
+@@ -20,7 +20,7 @@
+       $Session = Gdn::Session();
+       if ($Sender->Menu && $Session->IsValid()) {
+          // Comment out this next line if you want to put the link somewhere else manually
+-         $Sender->Menu->AddLink('AllViewed', T('Mark All Viewed'), '/discussions/markallviewed');
++         // $Sender->Menu->AddLink('AllViewed', T('Mark All Viewed'), '/discussions/markallviewed');
+       }
+    }
+ 
