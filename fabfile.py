@@ -5,8 +5,8 @@ import hashlib
 from fabric.api import *
 from fabric import utils
 
-VFORUM_VERSION = '2.0.17.10'
-VFORUM_URL = 'http://vanillaforums.org/uploads/addons/XF4Q3O6CDB1Z.zip'
+VFORUM_VERSION = '2.0.18.b2'
+VFORUM_URL = 'http://vanillaforums.org/uploads/addons/A0WQWALCWMSM.zip'
 VFORUM_TMP_FILE = '/tmp/vforum-%s.zip' % VFORUM_VERSION
 
 PLUGIN_FILE_UPLOAD_VERSION = '1.4.4'
