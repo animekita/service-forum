@@ -69,6 +69,10 @@ def build(config_file=None):
 
 	local('ln -s -f ../../addons/selvbetjening-sso/plugins/SelvbetjeningSSO build/plugins/SelvbetjeningSSO')
 
+	print 'Applying kita-misc addon'
+
+	local('ln -s -f ../../addons/kita-misc/plugins/KitaMisc build/plugins/KitaMisc')
+
 	print 'Applying kita-theme addon'
 
 	local('ln -s -f ../../addons/kita-theme/themes/kita build/themes/kita')
