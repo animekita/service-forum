@@ -5,16 +5,16 @@ import hashlib
 from fabric.api import *
 from fabric import utils
 
-VFORUM_VERSION = '2.0.17'
-VFORUM_URL = 'http://www.vanillaforums.org/uploads/addons/Q3HEV2BFTZFZ.zip'
+VFORUM_VERSION = '2.0.17.10'
+VFORUM_URL = 'http://vanillaforums.org/uploads/addons/XF4Q3O6CDB1Z.zip'
 VFORUM_TMP_FILE = '/tmp/vforum-%s.zip' % VFORUM_VERSION
 
-PLUGIN_FILE_UPLOAD_VERSION = '1.4.0'
-PLUGIN_FILE_UPLOAD_URL = 'http://vanillaforums.org/uploads/addons/ZO5QDNEU1ADP.zip'
+PLUGIN_FILE_UPLOAD_VERSION = '1.4.4'
+PLUGIN_FILE_UPLOAD_URL = 'http://vanillaforums.org/uploads/addons/72AMYWIGOUXK.zip'
 PLUGIN_FILE_UPLOAD_TMP_FILE = '/tmp/vforum-plugin-file-upload-%s.zip' % PLUGIN_FILE_UPLOAD_VERSION
 
-PLUGIN_WHOISONLINE_VERSION = '0.8'
-PLUGIN_WHOISONLINE_URL = 'http://vanillaforums.org/uploads/addons/PCVRY64JRWNS.zip'
+PLUGIN_WHOISONLINE_VERSION = '1.3'
+PLUGIN_WHOISONLINE_URL = 'http://vanillaforums.org/uploads/addons/WA621F1NX5T0.zip'
 PLUGIN_WHOISONLINE_TMP_FILE = '/tmp/vforum-plugin-whoisonline-%s.zip' % PLUGIN_WHOISONLINE_VERSION
 
 PLUGIN_QUOTE_VERSION = '1.2'
@@ -77,9 +77,11 @@ def build(config_file=None):
 		local('cp %s build/conf/config.php' % config_file)
 		local('chmod 777 build/conf/config.php')
 
-# lav deployment
-# lav migration plan
 # profiles
 # better editor (optional)
+
 # locale
 # theme
+
+# lav deployment
+# lav migration plan
