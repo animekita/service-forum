@@ -1,0 +1,9 @@
+#Menu {
+    width: 540px;
+}
+
+#Menu li.NonTab,
+#Menu li.NonTab a {
+   background: #2781BA;
+   float: right;
+}
