@@ -14,8 +14,16 @@ $PluginInfo['KitaMisc'] = array(
 
 class KitaMiscPlugin extends Gdn_Plugin {
 
+    public function Setup() {
+
+    }
+
     public function DiscussionsController_AfterAllDiscussionsTab_Handler(&$Sender) {
-        echo '<a href="' + Gdn_Url:WebRoot(true) + 'discussions/markallviewed">Mark All Viewed</a>';
+        echo Anchor("Mark All Viewed", "/discussions/markallviewed");
+    }
+
+    public function CategoriesController_AfterAllDiscussionsTab_Handler(&$Sender) {
+        echo Anchor("Mark All Viewed", "/discussions/markallviewed");
     }
 
 }
