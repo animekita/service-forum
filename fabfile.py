@@ -65,6 +65,10 @@ def build(config_file=None):
 
 	local('ln -s -f ../../addons/selvbetjening-sso/plugins/SelvbetjeningSSO build/plugins/SelvbetjeningSSO')
 
+	print 'Applying kita-theme addon'
+
+	local('ln -s -f ../../addons/kita-theme/themes/kita build/themes/kita')
+
 	print ('Setting permissions')
 
 	local('chmod 770 build/uploads')
