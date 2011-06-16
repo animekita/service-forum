@@ -46,8 +46,8 @@ def build(config_file=None):
 
 	local('unzip %s -d build/' % VFORUM_TMP_FILE)
 
-	local('mv build/vanilla/* build/')
-	local('mv build/vanilla/.htaccess build/')
+	local('mv build/Vanilla_%s/* build/' % VFORUM_VERSION)
+	local('mv build/Vanilla_%s/.htaccess build/' % VFORUM_VERSION)
 	local('rm -rf build/vanilla/')
 
 	print('Downloading plugins')
