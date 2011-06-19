@@ -77,6 +77,10 @@ def build(config_file=None):
 
 	local('ln -s -f ../../addons/kita-theme/themes/kita build/themes/kita')
 
+	print 'Applying kita-locale addon'
+
+	local('ln -s -f ../../addons/kita-locale/locales/danish build/locales/danish')
+
 	print ('Setting permissions')
 
 	local('chmod 770 build/uploads')
