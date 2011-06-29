@@ -1,0 +1,20 @@
+--- /home/semadk/src/kita-svn/services/forum/trunk/build/plugins/FileUpload/views/link_files.php
++++ /home/semadk/src/kita-svn/services/forum/trunk/build/plugins/FileUpload/views/link_files.new
+@@ -17,7 +17,7 @@
+ 
+                   if ($CanDownload) {
+                      $DownloadUrl = Url(MediaModel::Url($Media));
+-                     $Img = '<a href="'.$DownloadUrl.'">';
++                     $Img = '<a href="'.$DownloadUrl.'" target="_blank">';
+                   }
+ 
+                   $ThumbnailUrl = MediaModel::ThumbnailUrl($Media);
+@@ -35,7 +35,7 @@
+                      echo '<div class="FileName">';
+ 
+                      if (isset($DownloadUrl)) {
+-                        echo '<a href="'.$DownloadUrl.'">'.htmlspecialchars($Media->Name).'</a>';
++                        echo '<a href="'.$DownloadUrl.'" target="_blank">'.htmlspecialchars($Media->Name).'</a>';
+                      } else {
+                         echo htmlspecialchars($Media->Name);
+                      }

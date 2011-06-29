@@ -61,10 +61,6 @@ def build(config_file=None):
 	download(PLUGIN_QUOTE_URL, PLUGIN_QUOTE_TMP_FILE)
 	local('unzip %s -d build/plugins/' % PLUGIN_QUOTE_TMP_FILE)
 
-	print('Patching...')
-
-	local('patch build/plugins/AllViewed/class.allviewed.plugin.php patches/mark-all-viewed/class.allviewed.plugin.patch')
-
 	print 'Applying selvbetjening-sso addon'
 
 	local('ln -s -f ../../addons/selvbetjening-sso/plugins/SelvbetjeningSSO build/plugins/SelvbetjeningSSO')
@@ -80,6 +76,12 @@ def build(config_file=None):
 	print 'Applying kita-locale addon'
 
 	local('ln -s -f ../../addons/kita-locale/locales/danish build/locales/danish')
+
+	print('Patching...')
+
+	local('patch build/plugins/AllViewed/class.allviewed.plugin.php patches/mark-all-viewed/class.allviewed.plugin.patch')
+
+	local('patch build/plugins/FileUpload/views/link_files.php  patches/open-attachments-in-new-window/link_files.patch')
 
 	print ('Setting permissions')
 

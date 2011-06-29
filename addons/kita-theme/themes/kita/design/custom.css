@@ -8,6 +8,6 @@
    float: right;
 }
 
-div.DiscussionsTabs, div.CommentTabs {
+div.DiscussionsTabs, div.CommentTabs, .DraftButton {
   display: none;
 }
