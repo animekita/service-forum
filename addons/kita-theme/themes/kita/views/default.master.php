@@ -13,6 +13,9 @@
 			      $Session = Gdn::Session();
 					if ($this->Menu) {
 						$Authenticator = Gdn::Authenticator();
+
+						$this->Menu->AddLink('Categories', T('Categories'), '/categories/all/');
+
 						if ($Session->IsValid()) {
 							$Name = $Session->User->Name;
 
