@@ -1,0 +1,13 @@
+--- /home/semadk/src/kita-svn/services/forum/trunk/build/plugins/FileUpload/views/link_files.php
++++ /home/semadk/src/kita-svn/services/forum/trunk/build/plugins/FileUpload/views/link_files.php.orig
+@@ -54,8 +54,8 @@
+                      $Actions = '';
+                      if (StringBeginsWith($this->ControllerName, 'post', TRUE))
+                         $Actions = ConcatSep(' | ', $Actions, '<a class="InsertImage" href="'.Url(MediaModel::Url($Path)).'">'.T('Insert Image').'</a>');
+-   
+-                     if ($IsOwner || Gdn::Session()->CheckPermission("Garden.Settings.Manage"))
++
++                     if (Gdn::Session()->CheckPermission("Garden.Settings.Manage"))
+                         $Actions = ConcatSep(' | ', $Actions, '<a class="DeleteFile" href="'.Url("/plugin/fileupload/delete/{$Media->MediaID}").'"><span>'.T('Delete').'</span></a>');
+    
+                      if ($Actions)

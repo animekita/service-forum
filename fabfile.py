@@ -80,9 +80,8 @@ def build(config_file=None):
 	print('Patching...')
 
 	local('patch build/plugins/AllViewed/class.allviewed.plugin.php patches/mark-all-viewed/class.allviewed.plugin.patch')
-
 	local('patch build/plugins/FileUpload/views/link_files.php  patches/open-attachments-in-new-window/link_files.patch')
-
+	local('patch build/plugins/FileUpload/views/link_files.php patches/remove-delete-upload/remove-delete-link.patch')
 	local('patch build/plugins/cleditor/default.php  patches/cleditor-cleanup/reduce-options.patch')
 
 	print ('Setting permissions')
@@ -92,16 +91,7 @@ def build(config_file=None):
 	local('chmod 770 build/cache/Smarty/compile')
 
 	if config_file is not None:
-		print ('Copy config')
+		print ('Copying config')
 
 		local('cp %s build/conf/config.php' % config_file)
 		local('chmod 777 build/conf/config.php')
-
-# profiles
-# better editor (optional)
-
-# locale
-# theme
-
-# lav deployment
-# lav migration plan
