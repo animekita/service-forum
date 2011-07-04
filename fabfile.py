@@ -83,6 +83,8 @@ def build(config_file=None):
 
 	local('patch build/plugins/FileUpload/views/link_files.php  patches/open-attachments-in-new-window/link_files.patch')
 
+	local('patch build/plugins/cleditor/default.php  patches/cleditor-cleanup/reduce-options.patch')
+
 	print ('Setting permissions')
 
 	local('chmod 770 build/uploads')
