@@ -70,6 +70,7 @@ div.Headings div.controls {
 
 h3.Users {
   float: right;
+  margin-right: 1em;
 }
 
 div.Conversation {
