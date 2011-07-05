@@ -1,13 +1,111 @@
-#Menu {
-    width: 540px;
-}
-
-#Menu li.NonTab,
-#Menu li.NonTab a {
-   background: #2781BA;
-   float: right;
-}
+/** Remove unused elements **/
 
 div.DiscussionsTabs, div.CommentTabs, .DraftButton {
   display: none;
+}
+
+#Head {
+  background-color: transparent;
+}
+
+#Menu li a {
+  color: #000000;
+}
+
+#Menu li span {
+  background-color: #2595cb;
+  color: #FFFFFF;
+}
+
+#Menu li:hover span, #Menu li.Highlight span   {
+  background-color: #FFFFFF;
+  color: #2595cb;
+}
+
+#Menu li.Highlight a {
+  color: #FFFFFF;
+  background-color: #2595cb;
+}
+
+div.Search div {
+  border-color: #2595cb;
+  border-style: solid;
+  border-width: 1px;
+}
+
+div.Box h4 {
+  margin-top: 0.3em;
+  margin-bottom: 0.7em;
+  font-size: 1.2em;
+}
+
+div.Box li {
+  font-size: 1em;
+  margin-bottom: 0px;
+}
+
+/** Headings **/
+
+div.Headings {
+  padding-top: 0.8em;
+}
+
+div.Headings h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #09475A;
+  margin: 0.3em;
+  display: inline;
+}
+
+div.Headings span {
+  margin-left: 1em;
+}
+
+div.Headings div.controls {
+  float: right;
+}
+
+/** Conversations list **/
+
+h3.Users {
+  float: right;
+}
+
+div.Conversation {
+  overflow: auto;
+}
+
+div.Conversation div.Photo {
+  display: none;
+}
+
+/** Discussions **/
+
+div.DiscussionTab a.Bookmark {
+  display: block;
+  position: relative;
+  top: -1em;
+}
+
+ul.Flyout {
+  margin: 0px;
+}
+
+li.Mine {
+  background-color: transparent;
+}
+
+li.New {
+  background-color: #FEFECC;
+}
+
+ul.MessageList div.Meta span.Author img {
+   height: 80px;
+   width: 80px;
+   margin-bottom: 1em;
+}
+
+ul.MessageList div.Message {
+  font-size: 0.9em;
 }

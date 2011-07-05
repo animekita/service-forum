@@ -1,7 +1,7 @@
 <?php if (!defined('APPLICATION')) exit();
 $Session = Gdn::Session();
 
-echo '<div class="Tabs Headings CategoryHeadings"><div class="ItemHeading">';
+echo '<div class="Tabs Headings CategoryHeadings"><h2>';
 
 $Breadcrumbs = Gdn::Controller()->Data('Breadcrumbs');
 if ($Breadcrumbs) {
@@ -19,6 +19,11 @@ if ($Breadcrumbs) {
 } else {
    echo T('All Discussions');
 }
+
+echo '</h2><div class="controls">';
+
+   echo '<span>' . Anchor(T("Show All Categories"), "/categories/all/") . '</span>';
+   echo '<span>' . Anchor(T("Mark All Viewed"), "/discussions/markallviewed") . '</span>';
 
 echo '</div></div>';
 
