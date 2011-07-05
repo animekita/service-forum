@@ -3,11 +3,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-ca">
 
 <head>
-	<link rel="stylesheet" type="text/css" href="<?php echo C('Garden.Kita.StaticUrl'); ?>css/reset.css" />
+	<?php $ThemeVersion = GetValue('Version', Gdn::ThemeManager()->GetThemeInfo(Theme()), false);
+	if ($ThemeVersion) {
+		$ThemeVersion = '?v=' . $ThemeVersion;
+	}
+	?>
+	<link rel="stylesheet" type="text/css" href="<?php echo C('Garden.Kita.StaticUrl'); ?>css/reset.css<?php echo $ThemeVersion; ?>" />
 
 	<?php $this->RenderAsset('Head'); ?>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo C('Garden.Kita.StaticUrl'); ?>css/base.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo C('Garden.Kita.StaticUrl'); ?>css/base.css<?php echo $ThemeVersion; ?>" />
 </head>
 
 <?php
