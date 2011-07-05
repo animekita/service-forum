@@ -126,7 +126,7 @@ $Definition['EmailMembershipApproved'] = 'Hej %1$s,
 Din ansøgning om medlemsskab er blevet godkendt. Log på nu ved at klikke på det følgende link:
 
   %2$s
-  
+
 Hav en god dag!';
 $Definition['EmailNotification'] = '%1$s
 
@@ -359,6 +359,6 @@ $Definition['Uninvite'] = 'Fjern invitation';
 $Definition['Send Again'] = 'Send igen';
 $Definition['Pending'] = 'Afventer';
 
-$Definition['Show All Categories'] = 'Vis alle debatter';
+$Definition['Show All Categories'] = 'Vis alle kategorier';
 $Definition['Mark All Viewed'] = 'Marker alt som set';
 $Definition["Who's Online"] = "På lige nu";
