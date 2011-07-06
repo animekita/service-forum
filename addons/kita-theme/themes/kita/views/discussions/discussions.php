@@ -23,7 +23,9 @@ if ($Breadcrumbs) {
 echo '</h2><div class="controls">';
 
    echo '<span>' . Anchor(T("Show All Categories"), "/categories/all/") . '</span>';
-   echo '<span>' . Anchor(T("Mark All Viewed"), "/discussions/markallviewed") . '</span>';
+   if (Gdn::Session()->IsValid()) {
+	  echo '<span>' . Anchor(T("Mark All Viewed"), "/discussions/markallviewed") . '</span>';
+   }
 
 echo '</div></div>';
 
