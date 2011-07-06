@@ -4,6 +4,8 @@ div.DiscussionsTabs, div.CommentTabs, .DraftButton {
   display: none;
 }
 
+/** Menu modifications **/
+
 #Head {
   background-color: transparent;
 }
