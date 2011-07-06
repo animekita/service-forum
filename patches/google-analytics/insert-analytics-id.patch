@@ -1,0 +1,11 @@
+--- /home/semadk/src/kita-svn/services/forum/trunk/build/plugins/Analytics/default.php
++++ /home/semadk/src/kita-svn/services/forum/trunk/build/plugins/Analytics/default.new.php
+@@ -34,7 +34,7 @@
+     // IS BELOW, BUT I ASSURE YOU THAT ALL ZEROES WILL NOT MAKE MR.
+     // GOOGLE A HAPPY CAMPER!
+     // ************************************************************
+-    $WebId = 'UA-0000000-0';
++    $WebId = 'UA-300839-5';
+ 
+     // Now we're just going to add our javascript to the head.  It's not
+     // super pretty formatted, but it works and working is half the battle.

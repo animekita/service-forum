@@ -21,6 +21,10 @@ PLUGIN_QUOTE_VERSION = '1.2'
 PLUGIN_QUOTE_URL = 'http://vanillaforums.org/uploads/addons/A46J6T6GG5C8.zip'
 PLUGIN_QUOTE_TMP_FILE = '/tmp/vforum-plugin-quote-%s.zip' % PLUGIN_QUOTE_VERSION
 
+PLUGIN_ANALYTICS_VERSION = '1.0'
+PLUGIN_ANALYTICS_URL = 'http://vanillaforums.org/uploads/Z2HHMBXN7OJH.zip'
+PLUGIN_ANALYTICS_TMP_FILE = '/tmp/vforum-plugin-analytics-%s.zip' % PLUGIN_ANALYTICS_VERSION
+
 def download(url, destination):
 	if os.path.exists(destination):
 		print('Download detected, skipping download')
@@ -61,6 +65,9 @@ def build(config_file=None):
 	download(PLUGIN_QUOTE_URL, PLUGIN_QUOTE_TMP_FILE)
 	local('unzip %s -d build/plugins/' % PLUGIN_QUOTE_TMP_FILE)
 
+	download(PLUGIN_ANALYTICS_URL, PLUGIN_ANALYTICS_TMP_FILE)
+	local('unzip %s -d build/plugins/' % PLUGIN_ANALYTICS_TMP_FILE)
+
 	print 'Applying selvbetjening-sso addon'
 
 	local('ln -s -f ../../addons/selvbetjening-sso/plugins/SelvbetjeningSSO build/plugins/SelvbetjeningSSO')
@@ -83,6 +90,7 @@ def build(config_file=None):
 	local('patch build/plugins/FileUpload/views/link_files.php  patches/open-attachments-in-new-window/link_files.patch')
 	local('patch build/plugins/FileUpload/views/link_files.php patches/remove-delete-upload/remove-delete-link.patch')
 	local('patch build/plugins/cleditor/default.php  patches/cleditor-cleanup/reduce-options.patch')
+	local('patch build/plugins/Analytics/default.php patches/google-analytics/insert-analytics-id.patch')
 
 	print ('Setting permissions')
 
