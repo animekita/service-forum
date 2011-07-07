@@ -1,6 +1,6 @@
 --- /home/semadk/src/kita-svn/services/forum/trunk/build/plugins/cleditor/default.php
 +++ /home/semadk/src/kita-svn/services/forum/trunk/build/plugins/cleditor/default.new.php
-@@ -88,7 +88,14 @@
+@@ -88,7 +88,15 @@
  		// Attach the editor to comment boxes
  		jQuery("#Form_Body").livequery(function() {
  			var frm = $(this).parents("div.CommentForm");
@@ -12,6 +12,7 @@
 +					  "removeformat | bullets numbering | outdent " +
 +					  "indent | undo redo | " +
 +					  "image link unlink | pastetext source",
++			docCSSFile: "/' . Gdn_Url::WebRoot() . '/themes/' . Theme() . '/design/editor.css",
 +			})[0];
  			this.editor = ed; // Support other plugins!
  			jQuery(frm).bind("clearCommentForm", {editor:ed}, function(e) {

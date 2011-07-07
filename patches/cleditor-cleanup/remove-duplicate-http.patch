@@ -1,0 +1,19 @@
+--- /home/semadk/src/kita-svn/services/forum/trunk/build/plugins/cleditor/default.php
++++ /home/semadk/src/kita-svn/services/forum/trunk/build/plugins/cleditor/default.new.php
+@@ -101,6 +101,16 @@
+ 				frm.find("textarea").hide();
+ 				e.data.editor.clear();
+ 			});
++
++			ed.doc.execCommandOld = ed.doc.execCommand;
++			ed.doc.execCommand = function(command, unknown, value) {
++				if (command == "insertimage") {
++					value = value.replace("http://http://", "http://");
++				}
++
++				return ed.doc.execCommandOld(command, unknown, value);
++			};
++			$.editor = ed;
+ 		});
+ 	})(jQuery);
+ </script>');

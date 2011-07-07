@@ -87,10 +87,14 @@ def build(config_file=None):
 	print('Patching...')
 
 	local('patch build/plugins/AllViewed/class.allviewed.plugin.php patches/mark-all-viewed/class.allviewed.plugin.patch')
+	local('patch build/plugins/Analytics/default.php patches/google-analytics/insert-analytics-id.patch')
+
 	local('patch build/plugins/FileUpload/views/link_files.php  patches/open-attachments-in-new-window/link_files.patch')
 	local('patch build/plugins/FileUpload/views/link_files.php patches/remove-delete-upload/remove-delete-link.patch')
+
 	local('patch build/plugins/cleditor/default.php  patches/cleditor-cleanup/reduce-options.patch')
-	local('patch build/plugins/Analytics/default.php patches/google-analytics/insert-analytics-id.patch')
+	local('patch build/plugins/cleditor/default.php  patches/cleditor-cleanup/remove-duplicate-http.patch')
+	local('patch build/plugins/FileUpload/js/fileupload.js  patches/cleditor-cleanup/file-upload-integration.patch')
 
 	print ('Setting permissions')
 

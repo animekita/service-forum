@@ -1,0 +1,23 @@
+--- /home/semadk/src/kita-svn/services/forum/trunk/build/plugins/FileUpload/js/fileupload.js
++++ /home/semadk/src/kita-svn/services/forum/trunk/build/plugins/FileUpload/js/fileupload.new.js
+@@ -508,8 +508,7 @@
+ 					ImageAnchor.attr('href', JResponse.MediaResponse.FinalImageLocation);
+ 					ImageAnchor.show();
+ 					ImageAnchor.live('click', function() {
+-						var txtbox = jQuery(FileListing.parents('form').find('textarea'));
+-						txtbox.val(txtbox.val()+'<img src="'+ImageAnchor.attr('href')+'" />');
++						$.editor.doc.execCommand("inserthtml", 0, '<img src="'+ImageAnchor.attr('href')+'" />');
+ 						return false;
+ 					});
+ 				}
+@@ -568,8 +567,8 @@
+    GdnUploaders.Prepare()
+ 
+    $('.Attachment .InsertImage').live('click', function() {
+-      var txtbox = jQuery(this).closest('form').find('textarea');
+-      txtbox.val(txtbox.val()+'<img src="'+jQuery(this).attr('href')+'" />');
++      $.editor.doc.execCommand("inserthtml", 0, '<img src="'+jQuery(this).attr('href')+'" />');
++
+       return false;
+    });
+ 
