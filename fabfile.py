@@ -1,3 +1,5 @@
+from __future__ import with_statement
+
 import os
 import sys
 import hashlib
@@ -95,6 +97,8 @@ def build(config_file=None):
 	local('patch build/plugins/cleditor/default.php  patches/cleditor-cleanup/reduce-options.patch')
 	local('patch build/plugins/cleditor/default.php  patches/cleditor-cleanup/remove-duplicate-http.patch')
 	local('patch build/plugins/FileUpload/js/fileupload.js  patches/cleditor-cleanup/file-upload-integration.patch')
+
+	local('patch build/library/core/functions.general.php patches/fix-minify/fix-minify.patch')
 
 	print ('Setting permissions')
 

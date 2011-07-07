@@ -1,0 +1,15 @@
+--- /home/semadk/src/kita-svn/services/forum/trunk/build/library/core/functions.general.php
++++ /home/semadk/src/kita-svn/services/forum/trunk/build/library/core/functions.general.new.php
+@@ -395,7 +395,11 @@
+             continue;
+ 
+          if ($Val != '' && $Attribute != 'Standard') {
+-            $Return .= ' '.$Attribute.'="'.htmlspecialchars($Val, ENT_COMPAT, 'UTF-8').'"';
++			if ($Attribute != 'href' && $Attribute != 'src') {
++			   $Return .= ' '.$Attribute.'="'.htmlspecialchars($Val, ENT_COMPAT, 'UTF-8').'"';
++			} else {
++			   $Return .= ' '.$Attribute.'="'.$Val.'"';
++			}
+          }
+       }
+       return $Return;
