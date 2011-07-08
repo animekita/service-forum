@@ -1,0 +1,17 @@
+--- /home/semadk/src/kita-svn/services/forum/trunk/build/applications/vanilla/models/class.commentmodel.php
++++ /home/semadk/src/kita-svn/services/forum/trunk/build/applications/vanilla/models/class.commentmodel.new.php
+@@ -250,12 +250,12 @@
+                $NewComment |= Gdn_Format::ToTimestamp($Discussion->DateLastComment) > Gdn_Format::ToTimestamp($Discussion->DateLastViewed);
+ 
+             // Update the watch data.
+-				if ($NewComment || ($CountWatch != $Discussion->CountCommentWatch)) {
++				if ($NewComment || ($CountWatch > $Discussion->CountCommentWatch)) {
+ 					// Only update the watch if there are new comments.
+ 					$this->SQL->Put(
+ 						'UserDiscussion',
+ 						array(
+-							'CountComments' => $CountWatch,
++							'CountComments' => max($CountWatch, $Discussion->CountCommentWatch),
+                      'DateLastViewed' => Gdn_Format::ToDateTime()
+ 						),
+ 						array(

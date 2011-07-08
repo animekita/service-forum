@@ -112,3 +112,7 @@ ul.MessageList div.Meta span.Author img {
 ul.MessageList div.Message {
   font-size: 0.9em;
 }
+
+div.Message img {
+  max-width: 675px;
+}

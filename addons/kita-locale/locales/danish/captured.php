@@ -365,5 +365,5 @@ $Definition['Mark All Viewed'] = 'Marker alt som set';
 $Definition["Who's Online"] = "På lige nu";
 $Definition['Attach a file'] = 'Vedhæft en fil';
 $Definition['Create User'] = 'Opret bruger';
-$Definition['Quote'] = 'Citere';
+$Definition['Quote'] = 'Citér';
 $Definition['Insert Image'] = 'Indsæt billede';

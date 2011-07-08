@@ -100,6 +100,8 @@ def build(config_file=None):
 
 	local('patch build/library/core/functions.general.php patches/fix-minify/fix-minify.patch')
 
+	local('patch build/applications/vanilla/models/class.commentmodel.php patches/bugfixes/fix-discussion-watched-logic.patch')
+
 	print ('Setting permissions')
 
 	local('chmod 770 build/uploads')
