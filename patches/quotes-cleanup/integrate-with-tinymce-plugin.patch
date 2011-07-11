@@ -1,0 +1,52 @@
+--- /home/semadk/src/kita-svn/services/forum/trunk/build/plugins/Quotes/js/quotes.old.js
++++ /home/semadk/src/kita-svn/services/forum/trunk/build/plugins/Quotes/js/quotes.js
+@@ -32,6 +32,12 @@
+       $('div.cleditorMain').livequery(function(){
+          Quotes.SetInsertMode('cleditor', this);
+       });
++
++	  $('span.mceEditor').livequery(function() {
++		 Quotes.SetInsertMode('tinymce');
++	  }, function() {
++		 Quotes.SetInsertMode('default');
++	  });
+    }
+    
+    Gdn_Quotes.prototype.SetInsertMode = function(InsertMode, ChangeElement) {
+@@ -165,6 +171,10 @@
+             var ScrollY = $(this.GetEditor().get(0).editor.$frame).offset().top - 100; // 100 provides buffer in viewport
+          break;
+          
++		 case 'tinymce':
++			var ScrollY = this.GetEditor().parents('div.TextBoxWrapper').offset().top - 100; // 100 provides buffer in viewport
++		 break;
++
+          case 'default':
+          default:
+             var ScrollY = this.GetEditor().offset().top - 100; // 100 provides buffer in viewport
+@@ -228,19 +238,21 @@
+    }
+    
+    Gdn_Quotes.prototype.ApplyQuoteText = function(QuoteText) {
+-      QuoteText = QuoteText+"\n";
+       var Editor = this.GetEditor();
+-      Editor.val(Editor.val() + QuoteText);
+       
+       switch (this.InsertMode) {
+          case 'cleditor':
++            Editor.val(Editor.val() + QuoteText + "\n<br/>");
+-            Editor.val(Editor.val() + "<br/>");
+             Editor.get(0).editor.updateFrame();
+          break;
+          
++		 case 'tinymce':
++			$.editor.tinymce().execCommand('mceInsertContent', false, QuoteText);
++		 break;
++
+          case 'default':
+          default:
++            Editor.val(Editor.val() + QuoteText + "\n<br/>");
+-            // Do nothing special
+          break;
+       }
+    }

@@ -86,6 +86,10 @@ def build(config_file=None):
 
 	local('ln -s -f ../../addons/kita-locale/locales/danish build/locales/danish')
 
+	print 'Applying tinymce-plugin addon'
+
+	local('ln -s -f ../../addons/tinymce-plugin/plugins/TinyMCE build/plugins/TinyMCE')
+
 	print('Patching...')
 
 	local('patch build/plugins/AllViewed/class.allviewed.plugin.php patches/mark-all-viewed/class.allviewed.plugin.patch')
@@ -93,14 +97,16 @@ def build(config_file=None):
 
 	local('patch build/plugins/FileUpload/views/link_files.php  patches/open-attachments-in-new-window/link_files.patch')
 	local('patch build/plugins/FileUpload/views/link_files.php patches/remove-delete-upload/remove-delete-link.patch')
+	local('patch build/plugins/FileUpload/js/fileupload.js  patches/fileupload-cleanup/integrate-with-tinymce-plugin.patch')
 
 	local('patch build/plugins/cleditor/default.php  patches/cleditor-cleanup/reduce-options.patch')
 	local('patch build/plugins/cleditor/default.php  patches/cleditor-cleanup/remove-duplicate-http.patch')
-	local('patch build/plugins/FileUpload/js/fileupload.js  patches/cleditor-cleanup/file-upload-integration.patch')
 
 	local('patch build/library/core/functions.general.php patches/fix-minify/fix-minify.patch')
 
 	local('patch build/applications/vanilla/models/class.commentmodel.php patches/bugfixes/fix-discussion-watched-logic.patch')
+
+	local('patch build/plugins/Quotes/js/quotes.js patches/quotes-cleanup/integrate-with-tinymce-plugin.patch')
 
 	print ('Setting permissions')
 

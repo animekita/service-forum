@@ -367,3 +367,4 @@ $Definition['Attach a file'] = 'Vedhæft en fil';
 $Definition['Create User'] = 'Opret bruger';
 $Definition['Quote'] = 'Citér';
 $Definition['Insert Image'] = 'Indsæt billede';
+$Definition['message'] = 'besked';

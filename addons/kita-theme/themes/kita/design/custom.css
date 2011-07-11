@@ -1,6 +1,6 @@
 /** Remove unused elements **/
 
-div.DiscussionsTabs, div.CommentTabs, .DraftButton {
+div.DiscussionsTabs, div.CommentTabs, .DraftButton, #Form_Preview {
   display: none;
 }
 
@@ -115,4 +115,37 @@ ul.MessageList div.Message {
 
 div.Message img {
   max-width: 675px;
+}
+
+div.QuoteText, div.QuoteText p, div.QuoteText div {
+  font-size: 1em;
+}
+
+/** tinyMCE integration **/
+
+div.Comment div.MessageForm div a {
+  font-size: 0.8em;
+}
+
+#DiscussionForm #Form_Body, #Form_Body {
+  margin: 0;
+}
+
+div.TextBoxControls {
+  float: right;
+  background-color: #F0F0EE;
+  border: solid #CCCCCC;
+  border-width: 0px 1px 1px 1px;
+  padding: 0 1em 0 1em;
+  font-size: 0.8em;
+}
+
+div.TextBoxControls a {
+  color: #000000;
+}
+
+/** Popup **/
+
+#Popup .Border {
+  min-width: 400px;
 }
