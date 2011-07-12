@@ -108,6 +108,12 @@ def build(config_file=None):
 
 	local('patch build/plugins/Quotes/js/quotes.js patches/quotes-cleanup/integrate-with-tinymce-plugin.patch')
 
+    local('patch build/plugins/TinyMCE/js/themes/advanced/skins/default/dialog.css patches/tinymce-cleanup/simplify-ui-dialog-css.patch')
+    local('patch build/plugins/TinyMCE/js/themes/advanced/link.htm patches/tinymce-cleanup/simplify-ui-link.htm.patch')
+    local('patch build/plugins/TinyMCE/js/themes/advanced/image.htm patches/tinymce-cleanup/simplify-ui-image.htm.patch')
+    local('patch build/plugins/TinyMCE/js/themes/advanced/editor_template.js patches/tinymce-cleanup/simplify-ui-editor-template.js.patch')
+    local('patch build/plugins/TinyMCE/js/themes/advanced/editor_template_src.js patches/tinymce-cleanup/simplify-ui-editor-template-src.js.patch')
+
 	print ('Setting permissions')
 
 	local('chmod 770 build/uploads')

@@ -1,0 +1,13 @@
+--- /home/semadk/src/kita/services/forum/trunk/addons/tinymce-plugin/plugins/TinyMCE/js/themes/advanced/skins/default/dialog.css
++++ /home/semadk/src/kita/services/forum/trunk/addons/tinymce-plugin/plugins/TinyMCE/js/themes/advanced/skins/default/dialog.old.css
+@@ -99,8 +99,8 @@
+ .title {font-size:12px; font-weight:bold; color:#2B6FB6;}
+ 
+ /* Dialog specific */
+-#link .panel_wrapper, #link div.current {height:25px;}
+-#image .panel_wrapper, #image div.current {height:25px;}
++#link .panel_wrapper, #link div.current {height:125px;}
++#image .panel_wrapper, #image div.current {height:200px;}
+ #plugintable thead {font-weight:bold; background:#DDD;}
+ #plugintable, #about #plugintable td {border:1px solid #919B9C;}
+ #plugintable {width:96%; margin-top:10px;}
