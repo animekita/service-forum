@@ -20,7 +20,7 @@
 -					<td><label for="class_list">{#class_name}</label></td>
 -					<td><select id="class_list" name="class_list"></select></td>
 -				</tr>
-+<input id="class_list" name="class_list" type="hidden" value="" /><input id="linktitle" name="linktitle" type="hidden" value="" /><input id="target_list" name="target_list" type="hidden" value="" /><input id="link_list" name="link_list" value="" />
++<input id="class_list" name="class_list" type="hidden" value="" /><input id="linktitle" name="linktitle" type="hidden" value="" /><input id="target_list" name="target_list" type="hidden" value="" /><input id="link_list" name="link_list" type="hidden" value="" />
  			</table>
  		</div>
  	</div>
