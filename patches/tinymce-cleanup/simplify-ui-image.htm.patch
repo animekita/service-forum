@@ -1,4 +1,4 @@
---- /home/semadk/src/kita/services/forum/trunk/addons/tinymce-plugin/plugins/TinyMCE/js/themes/advanced/image.old.htm
+--- /home/semadk/src/kita/services/forum/trunk/addons/tinymce-plugin/plugins/TinyMCE/js/themes/advanced/image.htm.old
 +++ /home/semadk/src/kita/services/forum/trunk/addons/tinymce-plugin/plugins/TinyMCE/js/themes/advanced/image.htm
 @@ -27,46 +27,7 @@
  						</tr>
