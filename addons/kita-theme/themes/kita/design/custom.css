@@ -1,3 +1,9 @@
+/** Reset global font to the one used on kitas pages **/
+
+body {
+	font-family: Arial, Helvetica, "Liberation sans", "Bitstream Vera Sans", sans-serif;
+}
+
 /** Remove unused elements **/
 
 div.DiscussionsTabs, div.CommentTabs, .DraftButton, #Form_Preview {
