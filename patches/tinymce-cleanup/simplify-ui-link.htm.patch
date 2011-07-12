@@ -1,6 +1,6 @@
 --- /home/semadk/src/kita/services/forum/trunk/addons/tinymce-plugin/plugins/TinyMCE/js/themes/advanced/link.orig.htm
 +++ /home/semadk/src/kita/services/forum/trunk/addons/tinymce-plugin/plugins/TinyMCE/js/themes/advanced/link.htm
-@@ -28,22 +28,6 @@
+@@ -28,22 +28,7 @@
  						</tr> 
  					</table></td>
  				</tr>
@@ -20,6 +20,7 @@
 -					<td><label for="class_list">{#class_name}</label></td>
 -					<td><select id="class_list" name="class_list"></select></td>
 -				</tr>
++<input id="class_list" name="class_list" type="hidden" value="" /><input id="linktitle" name="linktitle" type="hidden" value="" /><input id="target_list" name="target_list" type="hidden" value="" /><input id="link_list" name="link_list" value="" />
  			</table>
  		</div>
  	</div>
