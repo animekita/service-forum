@@ -1,4 +1,4 @@
---- /home/semadk/src/kita/services/forum/trunk/addons/tinymce-plugin/plugins/TinyMCE/js/themes/advanced/link.old.htm
+--- /home/semadk/src/kita/services/forum/trunk/addons/tinymce-plugin/plugins/TinyMCE/js/themes/advanced/link.orig.htm
 +++ /home/semadk/src/kita/services/forum/trunk/addons/tinymce-plugin/plugins/TinyMCE/js/themes/advanced/link.htm
 @@ -28,22 +28,6 @@
  						</tr> 
