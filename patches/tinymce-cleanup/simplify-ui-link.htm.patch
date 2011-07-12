@@ -1,10 +1,11 @@
 --- /home/semadk/src/kita/services/forum/trunk/addons/tinymce-plugin/plugins/TinyMCE/js/themes/advanced/link.htm.old
 +++ /home/semadk/src/kita/services/forum/trunk/addons/tinymce-plugin/plugins/TinyMCE/js/themes/advanced/link.htm
-@@ -28,22 +28,7 @@
+@@ -27,23 +27,8 @@
+ 							<td id="hrefbrowsercontainer">&nbsp;</td>
  						</tr> 
  					</table></td>
- 				</tr>
--				<tr>
+-				</tr>
+ 				<tr>
 -					<td><label for="link_list">{#advanced_dlg.link_list}</label></td>
 -					<td><select id="link_list" name="link_list" onchange="document.getElementById('href').value=this.options[this.selectedIndex].value;"></select></td>
 -				</tr>
